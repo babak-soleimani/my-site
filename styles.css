@@ -34,23 +34,23 @@ body {
   margin-bottom: 50px;
 }
 
-/* Vertical Menu – 3 big blocks */
+/* Vertical Menu – 3 large blocks filling the column */
 .menu {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   height: calc(100vh - 200px);
 }
 
-/* Buttons - CHUNKY */
+/* Chunky Menu Buttons */
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 
-  font-size: 38px;       /* bigger */
-  font-weight: 800;      /* chunkier */
-  letter-spacing: -0.5px; /* tighter, more contemporary */
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 
   border: none;
   background: none;
@@ -63,7 +63,7 @@ body {
   color: #000;
 }
 
-/* Right Side Text */
+/* Right Column Text */
 .lede {
   font-size: 19px;
   line-height: 1.75;
