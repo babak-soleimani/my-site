@@ -3,36 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home • MySite</title>
-  <meta name="description" content="A minimal, fast website deployed on Vercel." />
+  <title>Babak Soleimani</title>
+  <meta name="description" content="Babak Soleimani — music, writing, and maps." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="nav container">
-    <a class="brand" href="index.html">MySite</a>
-    <nav>
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <main class="container split">
+    <!-- Left: name + menu -->
+    <aside>
+      <div class="name">BABAK<br/>SOLEIMANI</div>
+      <nav class="menu" aria-label="Primary">
+        <a class="btn primary" href="music.html">MUSIC</a>
+        <a class="btn" href="writing.html">WRITING</a>
+        <a class="btn" href="maps.html">MAPS</a>
+      </nav>
+    </aside>
 
-  <main class="container">
-    <section class="hero">
-      <h1 class="h1">Hello, world—deployed in minutes.</h1>
-      <p class="p">This is a lightweight static site (no build tools). Edit these files and push to update.</p>
-      <a class="cta" href="about.html">Learn more</a>
-    </section>
-
-    <section class="grid">
-      <article class="card"><h3>Fast</h3><p>Just HTML + CSS. Great for landing pages or portfolios.</p></article>
-      <article class="card"><h3>Simple</h3><p>No frameworks required. Easy to version in Git.</p></article>
-      <article class="card"><h3>Upgradeable</h3><p>Migrate to Next.js later for MDX, APIs, etc.</p></article>
+    <!-- Right: about text -->
+    <section>
+      <p class="lede">
+        Short bio goes here. Example: I’m a musician and data-driven designer exploring the overlap of
+        <strong>jazz, architecture, and urban texture</strong>. I play with AgawDilim, write about design trends,
+        and build geographic visualizations from large public datasets.
+      </p>
+      <p class="lede">
+        Recent interests: microtonal harmony, Yelp-derived interior design analysis, and mapping the
+        shift from nooky “cozy” spaces to light-filled “airspace” cafés.
+      </p>
     </section>
   </main>
 
   <footer class="container">
-    <small>© <span id="y"></span> MySite. Deployed on Vercel.</small>
+    <small>© <span id="y"></span> Babak Soleimani</small>
   </footer>
   <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
 </body>
