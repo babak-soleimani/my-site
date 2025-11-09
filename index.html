@@ -1,26 +1,62 @@
-<section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Babak Soleimani</title>
+  <meta name="description" content="Babak Soleimani — music, writing, and maps." />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
 
-  <p class="lede">
-    I work across <strong>music, spatial research, and cultural analysis</strong>. My practice is concerned
-    with how interiors shape listening — how light, surfaces, and arrangement can expand or
-    compress the sense of presence between bodies.
-  </p>
+  <main class="container split">
 
-  <p class="lede">
-    I perform with AgawDilim, a project that blends modal improvisation, microtonal drift,
-    and rhythmic architectures influenced by jazz and regional classical traditions.
-  </p>
+    <!-- Left Column -->
+    <aside>
+      <div class="name">BABAK<br/>SOLEIMANI</div>
 
-  <p class="lede">
-    Parallel to performance, I study the <strong>design histories of cafes and social rooms</strong>.
-    Using open data (Yelp), I map the shift from intimate, shadowed “nook” interiors to the
-    contemporary “airspace” aesthetic — the global coffee-shop interior of bright walls,
-    hanging plants, and laptop-compatible neutrality.
-  </p>
+      <nav class="menu" aria-label="Main navigation">
+        <a class="btn" href="music.html">MUSIC</a>
+        <a class="btn" href="writing.html">WRITING</a>
+        <a class="btn" href="maps.html">MAPS</a>
+      </nav>
+    </aside>
 
-  <p class="lede">
-    I am interested in how aesthetic forms circulate through global supply networks, how style
-    encodes class aspiration, and how listening can be used as a way of reading architecture.
-  </p>
+    <!-- Right Column -->
+    <section>
+      <p class="lede">
+        I work across <strong>music, spatial research, and cultural analysis</strong>. My practice is concerned
+        with how interiors shape listening — how light, surfaces, and arrangement can expand or
+        compress the sense of presence between bodies.
+      </p>
 
-</section>
+      <p class="lede">
+        I perform with AgawDilim, a project blending modal improvisation, microtonal drift,
+        and rhythmic architectures influenced by jazz and regional classical traditions.
+      </p>
+
+      <p class="lede">
+        Alongside performance, I study the <strong>design histories of cafes and social rooms</strong>.
+        Using open cultural datasets (including Yelp), I map the shift from intimate, shadowed
+        “nook” interiors to the contemporary “airspace” aesthetic — the globalized coffee-shop
+        interior typology of bright walls, hanging plants, and remote-worker neutrality.
+      </p>
+
+      <p class="lede">
+        My current work explores how aesthetic forms circulate through supply chains,
+        how style encodes aspiration, and how listening can function as a method of reading space.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> Babak Soleimani</small>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
