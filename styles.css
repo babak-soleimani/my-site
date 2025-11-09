@@ -1,44 +1,69 @@
-/* Reset / Base */
+/* =========================
+   Reset / Base
+========================= */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* no page scroll */
+}
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
   background: #ffffff;
   color: #1a1a1a;
 }
 
-/* Layout */
+/* =========================
+   Frame / Layout
+========================= */
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 50px;
+  padding: 40px;
+  height: 100vh;              /* fill viewport */
+  display: flex;
+  align-items: stretch;
 }
 
 .split {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 440px 1fr; /* wider left for chunky type */
   gap: 80px;
-  min-height: 100vh;
+  height: 100%;                 /* fill container */
 }
 
-@media (max-width: 900px) {
-  .split { grid-template-columns: 1fr; }
+/* Keep two columns even on small screens to preserve no-scroll layout */
+@media (max-width: 700px) {
+  .split { grid-template-columns: 360px 1fr; gap: 40px; }
+}
+@media (max-width: 520px) {
+  .split { grid-template-columns: 320px 1fr; gap: 28px; }
 }
 
-/* Name */
+/* =========================
+   Left Column
+========================= */
+aside {
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* allow children to size properly */
+}
+
 .name {
   font-weight: 800;
   letter-spacing: 0.5px;
   line-height: 1.05;
   font-size: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
 }
 
-/* Vertical Menu – 3 large blocks filling the column */
+/* Menu fills the remaining column height with 3 equal rows */
 .menu {
+  flex: 1;                       /* take the rest of the column */
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  height: calc(100vh - 200px);
+  min-height: 0;                 /* enable proper internal sizing */
 }
 
 /* Chunky Menu Buttons */
@@ -48,37 +73,51 @@ body {
   justify-content: center;
   text-decoration: none;
 
-  font-size: 66px;
+  font-size: 66px;       /* chunky & big */
   font-weight: 900;
   letter-spacing: -1.5px;
+  text-transform: uppercase;
 
   border: none;
   background: none;
   color: #1a1a1a;
+
   transition: background 0.25s ease, color 0.25s ease;
 }
-
 .btn:hover {
   background: #f0f0f0;
   color: #000;
 }
 
-/* Right Column Text */
+/* =========================
+   Right Column (text)
+========================= */
+section {
+  min-height: 0;          /* critical for contained scrolling */
+  overflow-y: auto;       /* only right side scrolls if needed */
+  padding-right: 10px;    /* breathing room from scrollbar */
+}
+
 .lede {
   font-size: 19px;
   line-height: 1.75;
   color: #3a3a3a;
   margin: 0 0 26px 0;
 }
-
 .lede strong {
   color: #111;
 }
 
-/* Footer */
+/* =========================
+   Footer (optional)
+   - Position it without affecting page height
+========================= */
 footer {
-  margin-top: 60px;
-  padding: 20px 0;
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 12px;
   color: #888;
   font-size: 14px;
+  pointer-events: none; /* so it doesn't block clicks */
 }
