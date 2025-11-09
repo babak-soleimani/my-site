@@ -1,45 +1,72 @@
 /* Base */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
 body{
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:#0b1220; color:#e5e7eb;
+  background:#ffffff;
+  color:#1a1a1a;
 }
 
 /* Layout */
-.container{max-width:1100px;margin:0 auto;padding:28px}
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px;
+}
 .split{
-  display:grid; gap:28px;
+  display:grid;
   grid-template-columns: 280px 1fr;
+  gap:40px;
+  min-height:100vh; /* ensures full screen height */
 }
 @media (max-width: 800px){
-  .split{grid-template-columns: 1fr}
+  .split{grid-template-columns:1fr;}
 }
 
-/* Left column */
+/* Name */
 .name{
-  font-weight:800; letter-spacing:.4px; line-height:1.1;
-  font-size:28px; margin-bottom:22px;
+  font-weight:700;
+  letter-spacing:.4px;
+  line-height:1.1;
+  font-size:28px;
+  margin-bottom:40px;
 }
-.menu{display:flex;flex-direction:column;gap:14px}
+
+/* Vertical menu that expands to fill screen */
+.menu{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between; /* spread buttons vertically */
+  height: calc(100vh - 120px);   /* ensures full height */
+}
+
+/* Buttons */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:12px 18px; border-radius:999px; width:fit-content;
-  border:1px solid #1f2937; background:#0f172a; color:#e5e7eb;
-  text-decoration:none; font-weight:600; letter-spacing:.3px;
-  transition: transform .08s ease, background .2s ease, border-color .2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 20px;
+  border-radius:0;          /* no curves */
+  border:none;              /* remove border */
+  background:none;          /* plain text button */
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:.5px;
+  color:#1a1a1a;
+  text-decoration:none;
+  transition:color .2s ease;
 }
-.btn:hover{transform:translateY(-1px); background:#111a2e; border-color:#2a374a}
-.btn:active{transform:translateY(0)}
-.btn.primary{border-color:#06b6d4;}
 
-/* Right column */
+/* Hover state */
+.btn:hover{
+  color:#6b7280; /* subtle grey hover */
+}
+
+/* Right side text */
 .lede{
-  margin:0; font-size:18px; line-height:1.6; color:#cbd5e1;
+  margin:0 0 20px 0;
+  font-size:18px;
+  line-height:1.6;
+  color:#4d4d4d;
 }
-.lede strong{color:#e5e7eb}
-
-/* Header/Footer (optional minimal) */
-header, footer{border-top:1px solid #1f2937}
-header{border-top:none}
-footer{margin-top:48px; padding:20px 0; color:#94a3b8}
+.lede strong{color:#1a1a1a;}
