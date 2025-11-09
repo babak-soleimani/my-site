@@ -1,72 +1,88 @@
-/* Base */
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:#ffffff;
-  color:#1a1a1a;
+/* Reset / Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 /* Layout */
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:40px;
-}
-.split{
-  display:grid;
-  grid-template-columns: 280px 1fr;
-  gap:40px;
-  min-height:100vh; /* ensures full screen height */
-}
-@media (max-width: 800px){
-  .split{grid-template-columns:1fr;}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
 }
 
-/* Name */
-.name{
-  font-weight:700;
-  letter-spacing:.4px;
-  line-height:1.1;
-  font-size:28px;
-  margin-bottom:40px;
+.split {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+  min-height: 100vh;
 }
 
-/* Vertical menu that expands to fill screen */
-.menu{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between; /* spread buttons vertically */
-  height: calc(100vh - 120px);   /* ensures full height */
+@media (max-width: 800px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Buttons */
-.btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px 20px;
-  border-radius:0;          /* no curves */
-  border:none;              /* remove border */
-  background:none;          /* plain text button */
-  font-size:22px;
-  font-weight:600;
-  letter-spacing:.5px;
-  color:#1a1a1a;
-  text-decoration:none;
-  transition:color .2s ease;
+/* Left Column */
+.name {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1.1;
+  font-size: 28px;
+  margin-bottom: 40px;
 }
 
-/* Hover state */
-.btn:hover{
-  color:#6b7280; /* subtle grey hover */
+/* Menu takes full height and splits into 3 equal large blocks */
+.menu {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: calc(100vh - 140px); /* adjusts for header/breathing room */
 }
 
-/* Right side text */
-.lede{
-  margin:0 0 20px 0;
-  font-size:18px;
-  line-height:1.6;
-  color:#4d4d4d;
+/* Menu Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+
+  border: none;
+  background: none;
+  color: #1a1a1a;
+
+  transition: background 0.2s ease, color 0.2s ease;
 }
-.lede strong{color:#1a1a1a;}
+
+/* Hover / Interaction */
+.btn:hover {
+  background: #f2f2f2;
+  color: #444;
+}
+
+/* Right Column Text */
+.lede {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4d4d4d;
+  margin: 0 0 20px 0;
+}
+
+.lede strong {
+  color: #1a1a1a;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  color: #888;
+  font-size: 14px;
+}

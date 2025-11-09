@@ -8,34 +8,43 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <main class="container split">
-    <!-- Left: name + menu -->
+
+    <!-- Left Column -->
     <aside>
       <div class="name">BABAK<br/>SOLEIMANI</div>
-      <nav class="menu" aria-label="Primary">
-        <a class="btn primary" href="music.html">MUSIC</a>
+
+      <nav class="menu" aria-label="Main">
+        <a class="btn" href="music.html">MUSIC</a>
         <a class="btn" href="writing.html">WRITING</a>
         <a class="btn" href="maps.html">MAPS</a>
       </nav>
     </aside>
 
-    <!-- Right: about text -->
+    <!-- Right Column -->
     <section>
       <p class="lede">
-        Short bio goes here. Example: I’m a musician and data-driven designer exploring the overlap of
-        <strong>jazz, architecture, and urban texture</strong>. I play with AgawDilim, write about design trends,
-        and build geographic visualizations from large public datasets.
+        I explore the overlap of <strong>music, architecture, and spatial analysis</strong>.
+        My work traces how cultural spaces shape listening, gathering, and presence.
       </p>
       <p class="lede">
-        Recent interests: microtonal harmony, Yelp-derived interior design analysis, and mapping the
-        shift from nooky “cozy” spaces to light-filled “airspace” cafés.
+        I perform with AgawDilim, write about design histories of interiors, and develop 
+        geographic visualizations using open cultural datasets.
+      </p>
+      <p class="lede">
+        Current research: mapping the shift from intimate, shadowed "nook" spaces to the
+        contemporary "airspace" aesthetic in cafés and studios after 2010.
       </p>
     </section>
+
   </main>
 
   <footer class="container">
     <small>© <span id="y"></span> Babak Soleimani</small>
   </footer>
-  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear()</script>
+
 </body>
 </html>
