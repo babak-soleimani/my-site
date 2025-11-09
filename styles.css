@@ -1,14 +1,45 @@
-body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b1220;color:#e5e7eb}
-.container{max-width:1000px;margin:0 auto;padding:24px}
-.nav{position:sticky;top:0;background:rgba(11,18,32,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #1f2937;display:flex;justify-content:space-between;align-items:center}
-.nav a{color:#94a3b8;text-decoration:none;margin-left:18px}
-.nav a:hover,.nav a.active{color:#e5e7eb}
-.brand{font-weight:700;color:#e5e7eb;text-decoration:none}
-.hero{padding:72px 0}
-.h1{font-size:40px;line-height:1.1;margin:0 0 12px}
-.p{color:#94a3b8;max-width:60ch}
-.cta{display:inline-block;margin-top:24px;padding:10px 16px;border-radius:12px;border:1px solid #06b6d4;color:#e5e7eb;text-decoration:none}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:36px}
-.card{background:#0f172a;border:1px solid #1f2937;border-radius:16px;padding:18px}
-.card h3{margin:0 0 8px;font-size:18px}
-footer{border-top:1px solid #1f2937;margin-top:48px;padding:24px 0;color:#94a3b8}
+/* Base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:#0b1220; color:#e5e7eb;
+}
+
+/* Layout */
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.split{
+  display:grid; gap:28px;
+  grid-template-columns: 280px 1fr;
+}
+@media (max-width: 800px){
+  .split{grid-template-columns: 1fr}
+}
+
+/* Left column */
+.name{
+  font-weight:800; letter-spacing:.4px; line-height:1.1;
+  font-size:28px; margin-bottom:22px;
+}
+.menu{display:flex;flex-direction:column;gap:14px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 18px; border-radius:999px; width:fit-content;
+  border:1px solid #1f2937; background:#0f172a; color:#e5e7eb;
+  text-decoration:none; font-weight:600; letter-spacing:.3px;
+  transition: transform .08s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover{transform:translateY(-1px); background:#111a2e; border-color:#2a374a}
+.btn:active{transform:translateY(0)}
+.btn.primary{border-color:#06b6d4;}
+
+/* Right column */
+.lede{
+  margin:0; font-size:18px; line-height:1.6; color:#cbd5e1;
+}
+.lede strong{color:#e5e7eb}
+
+/* Header/Footer (optional minimal) */
+header, footer{border-top:1px solid #1f2937}
+header{border-top:none}
+footer{margin-top:48px; padding:20px 0; color:#94a3b8}
