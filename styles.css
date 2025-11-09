@@ -9,74 +9,70 @@ body {
 
 /* Layout */
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 50px;
 }
 
 .split {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 60px;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
   min-height: 100vh;
 }
 
-@media (max-width: 800px) {
-  .split {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
 }
 
-/* Left Column */
+/* Name */
 .name {
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  line-height: 1.1;
-  font-size: 28px;
-  margin-bottom: 40px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.05;
+  font-size: 40px;
+  margin-bottom: 50px;
 }
 
-/* Menu takes full height and splits into 3 equal large blocks */
+/* Vertical Menu – 3 big blocks */
 .menu {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  height: calc(100vh - 140px); /* adjusts for header/breathing room */
+  height: calc(100vh - 200px);
 }
 
-/* Menu Buttons */
+/* Buttons - CHUNKY */
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
+  font-size: 38px;       /* bigger */
+  font-weight: 800;      /* chunkier */
+  letter-spacing: -0.5px; /* tighter, more contemporary */
 
   border: none;
   background: none;
   color: #1a1a1a;
-
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* Hover / Interaction */
 .btn:hover {
-  background: #f2f2f2;
-  color: #444;
+  background: #f0f0f0;
+  color: #000;
 }
 
-/* Right Column Text */
+/* Right Side Text */
 .lede {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #4d4d4d;
-  margin: 0 0 20px 0;
+  font-size: 19px;
+  line-height: 1.75;
+  color: #3a3a3a;
+  margin: 0 0 26px 0;
 }
 
 .lede strong {
-  color: #1a1a1a;
+  color: #111;
 }
 
 /* Footer */
