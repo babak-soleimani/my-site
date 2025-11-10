@@ -3,22 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Babak Soleimani</title>
-  <meta name="description" content="Babak Soleimani — music, writing, and maps." />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <title>Babak Soleimani — Landing Preview</title>
+  <style>
+    /* =========================
+       Reset / Base
+    ========================= */
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* no page scroll */
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    /* =========================
+       Frame / Layout
+    ========================= */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 40px;
+      height: 100vh;              /* fill screen */
+      display: flex;
+      align-items: stretch;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 440px 1fr; /* wide left column for chunky menu */
+      gap: 80px;
+      height: 100%;
+    }
+
+    /* Keep 2 columns on small screens (no collapse) */
+    @media (max-width: 700px) {
+      .split { grid-template-columns: 360px 1fr; gap: 40px; }
+    }
+    @media (max-width: 520px) {
+      .split { grid-template-columns: 320px 1fr; gap: 28px; }
+    }
+
+    /* =========================
+       Left Column
+    ========================= */
+    aside {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .name {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      line-height: 1.05;
+      font-size: 40px;
+      margin-bottom: 28px;
+    }
+
+    /* Menu fills the remaining space with 3 equal tall blocks */
+    .menu {
+      flex: 1;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      min-height: 0;
+    }
+
+    /* =========================
+       Chunky Left-Aligned Buttons
+    ========================= */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;   /* left align text */
+
+      width: 100%;                   /* full width block */
+      padding-left: 0;               /* align with name */
+
+      text-decoration: none;
+      text-transform: uppercase;
+
+      font-size: 66px;               /* large + chunky */
+      font-weight: 900;
+      letter-spacing: -1.5px;
+
+      border: none;
+      background: none;
+      color: #1a1a1a;
+
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #f0f0f0;
+      color: #000;
+    }
+
+    /* =========================
+       Right Column (text)
+    ========================= */
+    section {
+      min-height: 0;         /* allow contained scroll */
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .lede {
+      font-size: 19px;
+      line-height: 1.75;
+      color: #3a3a3a;
+      margin: 0 0 26px 0;
+    }
+    .lede strong { color: #111; }
+
+    /* =========================
+       Footer (fixed visual position)
+    ========================= */
+    footer {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      bottom: 12px;
+      color: #888;
+      font-size: 14px;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-
   <main class="container split">
-
     <!-- Left Column -->
     <aside>
       <div class="name">BABAK<br/>SOLEIMANI</div>
-
       <nav class="menu" aria-label="Main navigation">
-        <a class="btn" href="music.html">MUSIC</a>
-        <a class="btn" href="writing.html">WRITING</a>
-        <a class="btn" href="maps.html">MAPS</a>
+        <a class="btn" href="#">MUSIC</a>
+        <a class="btn" href="#">WRITING</a>
+        <a class="btn" href="#">MAPS</a>
       </nav>
     </aside>
 
@@ -29,30 +153,21 @@
         with how interiors shape listening — how light, surfaces, and arrangement can expand or
         compress the sense of presence between bodies.
       </p>
-
       <p class="lede">
         I perform with AgawDilim, a project blending modal improvisation, microtonal drift,
         and rhythmic architectures influenced by jazz and regional classical traditions.
       </p>
-
-      <p class="lede">
-        I perform with AgawDilim, a project blending modal improvisation, microtonal drift,
-        and rhythmic architectures influenced by jazz and regional classical traditions.
-      </p>
-
       <p class="lede">
         Alongside performance, I study the <strong>design histories of cafes and social rooms</strong>.
         Using open cultural datasets (including Yelp), I map the shift from intimate, shadowed
         “nook” interiors to the contemporary “airspace” aesthetic — the globalized coffee-shop
         interior typology of bright walls, hanging plants, and remote-worker neutrality.
       </p>
-
       <p class="lede">
         My current work explores how aesthetic forms circulate through supply chains,
         how style encodes aspiration, and how listening can function as a method of reading space.
       </p>
     </section>
-
   </main>
 
   <footer class="container">
@@ -60,8 +175,7 @@
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
