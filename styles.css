@@ -21,19 +21,19 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   padding: 40px;
-  height: 100vh;              /* fill viewport */
+  height: 100vh;              /* fill screen */
   display: flex;
   align-items: stretch;
 }
 
 .split {
   display: grid;
-  grid-template-columns: 440px 1fr; /* wider left for chunky type */
+  grid-template-columns: 440px 1fr; /* wide left column for chunky menu */
   gap: 80px;
-  height: 100%;                 /* fill container */
+  height: 100%;
 }
 
-/* Keep two columns even on small screens to preserve no-scroll layout */
+/* Keep 2 columns on small screens (no collapse) */
 @media (max-width: 700px) {
   .split { grid-template-columns: 360px 1fr; gap: 40px; }
 }
@@ -47,7 +47,7 @@ body {
 aside {
   display: flex;
   flex-direction: column;
-  min-height: 0; /* allow children to size properly */
+  min-height: 0;
 }
 
 .name {
@@ -58,25 +58,31 @@ aside {
   margin-bottom: 28px;
 }
 
-/* Menu fills the remaining column height with 3 equal rows */
+/* Menu fills the remaining space with 3 equal tall blocks */
 .menu {
-  flex: 1;                       /* take the rest of the column */
+  flex: 1;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  min-height: 0;                 /* enable proper internal sizing */
+  min-height: 0;
 }
 
-/* Chunky Menu Buttons */
+/* =========================
+   Chunky Left-Aligned Buttons
+========================= */
 .btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  justify-content: flex-start;   /* ← left align text */
 
-  font-size: 66px;       /* chunky & big */
+  width: 100%;                   /* full width block */
+  padding-left: 0;               /* align with name */
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 66px;               /* large + chunky */
   font-weight: 900;
   letter-spacing: -1.5px;
-  text-transform: uppercase;
 
   border: none;
   background: none;
@@ -84,18 +90,19 @@ aside {
 
   transition: background 0.25s ease, color 0.25s ease;
 }
+
 .btn:hover {
   background: #f0f0f0;
   color: #000;
 }
 
 /* =========================
-   Right Column (text)
+   Right Column Text
 ========================= */
 section {
-  min-height: 0;          /* critical for contained scrolling */
-  overflow-y: auto;       /* only right side scrolls if needed */
-  padding-right: 10px;    /* breathing room from scrollbar */
+  min-height: 0;         /* must allow scroll here instead of page */
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 .lede {
@@ -104,13 +111,13 @@ section {
   color: #3a3a3a;
   margin: 0 0 26px 0;
 }
+
 .lede strong {
   color: #111;
 }
 
 /* =========================
-   Footer (optional)
-   - Position it without affecting page height
+   Footer (fixed visual position)
 ========================= */
 footer {
   position: absolute;
@@ -119,5 +126,5 @@ footer {
   bottom: 12px;
   color: #888;
   font-size: 14px;
-  pointer-events: none; /* so it doesn't block clicks */
+  pointer-events: none;
 }
