@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Babak Soleimani — Landing Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     /* =========================
        Reset / Base
@@ -22,107 +23,50 @@
     }
 
     /* =========================
-       Frame / Layout
+       Centered Stage Layout
     ========================= */
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 40px;
-      height: 100vh;              /* fill screen */
-      display: flex;
-      align-items: stretch;
-    }
-
-    .split {
+    .stage {
+      height: 100vh;
       display: grid;
-      grid-template-columns: 440px 1fr; /* wide left column for chunky menu */
-      gap: 80px;
-      height: 100%;
+      place-items: center;
+      padding: 40px;
     }
 
-    /* Keep 2 columns on small screens (no collapse) */
-    @media (max-width: 700px) {
-      .split { grid-template-columns: 360px 1fr; gap: 40px; }
-    }
-    @media (max-width: 520px) {
-      .split { grid-template-columns: 320px 1fr; gap: 28px; }
-    }
-
-    /* =========================
-       Left Column
-    ========================= */
-    aside {
+    .stack {
       display: flex;
       flex-direction: column;
-      min-height: 0;
+      gap: 24px;
+      text-align: center;
+      max-width: 1000px;
     }
 
-    .name {
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      line-height: 1.05;
-      font-size: 40px;
-      margin-bottom: 28px;
+    .line {
+      margin: 0;
+      font-size: clamp(22px, 4vw, 54px);
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      line-height: 1.28; /* tweaked for typing look */
+      font-family: 'Work Sans', sans-serif;
+      color: #444;
     }
 
-    /* Menu fills the remaining space with 3 equal tall blocks */
-    .menu {
-      flex: 1;
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      min-height: 0;
-    }
-
-    /* =========================
-       Chunky Left-Aligned Buttons
-    ========================= */
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;   /* left align text */
-
-      width: 100%;                   /* full width block */
-      padding-left: 0;               /* align with name */
-
+    /* Inline button inside the sentence */
+    .inline-btn {
+      font-style: italic;
+      font-weight: 300; /* lighter, gentler emphasis */
       text-decoration: none;
-      text-transform: uppercase;
-
-      font-size: 66px;               /* large + chunky */
-      font-weight: 900;
-      letter-spacing: -1.5px;
-
-      border: none;
-      background: none;
-      color: #1a1a1a;
-
-      transition: background 0.25s ease, color 0.25s ease;
+      color: #555; /* softer tone */
+      padding: 0 6px;
+      border-radius: 4px;
+      transition: background-color .15s ease, color .15s ease;
+    }
+    .inline-btn:hover,
+    .inline-btn:focus-visible {    /* yellow highlight on hover/focus */
+      background: #e6c94f;         /* warm yellow */
+      outline: none;
     }
 
-    .btn:hover {
-      background: #f0f0f0;
-      color: #000;
-    }
-
-    /* =========================
-       Right Column (text)
-    ========================= */
-    section {
-      min-height: 0;         /* allow contained scroll */
-      overflow-y: auto;
-      padding-right: 10px;
-    }
-
-    .lede {
-      font-size: 19px;
-      line-height: 1.75;
-      color: #3a3a3a;
-      margin: 0 0 26px 0;
-    }
-    .lede strong { color: #111; }
-
-    /* =========================
-       Footer (fixed visual position)
-    ========================= */
+    /* Footer (optional, kept minimal) */
     footer {
       position: absolute;
       left: 40px;
@@ -131,43 +75,24 @@
       color: #888;
       font-size: 14px;
       pointer-events: none;
+      text-align: center;
     }
+      /* Distinct fonts per line */
+    
+    
+    
+      
   </style>
 </head>
 <body>
-  <main class="container split">
-    <!-- Left Column -->
-    <aside>
-      <div class="name">BABAK<br/>SOLEIMANI</div>
-      <nav class="menu" aria-label="Main navigation">
-        <a class="btn" href="#">MUSIC</a>
-        <a class="btn" href="#">WRITING</a>
-        <a class="btn" href="#">MAPS</a>
-      </nav>
-    </aside>
-
-    <!-- Right Column -->
-    <section>
-      <p class="lede">
-        I work across <strong>music, spatial research, and cultural analysis</strong>. My practice is concerned
-        with how interiors shape listening — how light, surfaces, and arrangement can expand or
-        compress the sense of presence between bodies.
-      </p>
-      <p class="lede">
-        I perform with AgawDilim, a project blending modal improvisation, microtonal drift,
-        and rhythmic architectures influenced by jazz and regional classical traditions.
-      </p>
-      <p class="lede">
-        Alongside performance, I study the <strong>design histories of cafes and social rooms</strong>.
-        Using open cultural datasets (including Yelp), I map the shift from intimate, shadowed
-        “nook” interiors to the contemporary “airspace” aesthetic — the globalized coffee-shop
-        interior typology of bright walls, hanging plants, and remote-worker neutrality.
-      </p>
-      <p class="lede">
-        My current work explores how aesthetic forms circulate through supply chains,
-        how style encodes aspiration, and how listening can function as a method of reading space.
-      </p>
-    </section>
+  
+  <main class="stage">
+    <div class="stack" aria-label="Primary actions">
+      <p class="line">I AM <a class="inline-btn" href="about.html">BABAK SOLEIMANI</a></p>
+      <p class="line">I MAKE <a class="inline-btn" href="music.html">MUSIC</a> FOR FUN</p>
+      <p class="line">I <a class="inline-btn" href="writing.html">WRITE</a> ABOUT DESIGN</p>
+      <p class="line">I CREATE <a class="inline-btn" href="maps.html">MAPS</a> FOR LIFE</p>
+    </div>
   </main>
 
   <footer class="container">
@@ -177,5 +102,6 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+  
 </body>
 </html>
